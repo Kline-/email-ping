@@ -1,0 +1,8 @@
+{
+    "time_min": 0,
+    "time_max": 600,
+    "smtp_host": "smtp.server.com",
+    "smtp_user": "your@email.com",
+    "smtp_pass": "your.password",
+    "message": "From: Your Name <your@email.com>\nTo: Your Name <your@email.com>\nSubject: email-ping {}\n\nPing? Pong! Slept for {} seconds this run."
+}
