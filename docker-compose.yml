@@ -1,0 +1,9 @@
+version: "3"
+services:
+  email-ping:
+    image: "email-ping:latest"
+    environment:
+     - "TZ=America/Chicago"
+    restart: "unless-stopped"
+    volumes:
+     - "./config.json:/usr/src/app/config.json:ro"
