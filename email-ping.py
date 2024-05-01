@@ -17,11 +17,11 @@ def main():
         d = random.randint(cfg['time_min'], cfg['time_max'])
         time.sleep(d)
         t = str(datetime.datetime.now())
-        cfg['message'] = cfg['message'].format(t, d)
+        m = cfg['message'].format(t, d)
         try:
             with smtplib.SMTP_SSL(host=cfg['smtp_host']) as s:
                 if s.login(cfg['smtp_user'], cfg['smtp_pass']):
-                    s.sendmail(cfg['smtp_user'], cfg['smtp_user'], cfg['message'])
+                    s.sendmail(cfg['smtp_user'], cfg['smtp_user'], m)
                     print('Ping successful: {}'.format(t), flush=True)
                 else:
                     print('Login failed: {}'.format(t), flush=True)
