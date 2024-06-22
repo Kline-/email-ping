@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 import datetime
 import json
 import pathlib
@@ -42,6 +41,10 @@ def read_config():
     for x in keys:
         if not x in cfg:
             raise KeyError('Key not found in config', x)
+
+    cnt = cfg['message'].count('{}')
+    if cnt != 2:
+        raise RuntimeError('Message must contain exactly two {{}} tokens, found {}.'.format(cnt))
 
     return cfg
 
